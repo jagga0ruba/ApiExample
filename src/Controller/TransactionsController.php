@@ -3,28 +3,28 @@
  * Created by PhpStorm.
  * User: joaod
  * Date: 21/01/2018
- * Time: 13:00
+ * Time: 15:49
  */
 
 namespace App\Controller;
 
-use App\Model\Customer;
+
 use App\Util\ValidateContentTypeJson;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use App\Model\Transaction;
 
-class CustomerController
+class TransactionsController
 {
     use ValidateContentTypeJson;
 
     /**
-     * @Route( "/Customer/Create" )
-     *
+     * @Route( "/Transaction/Deposit" )
      * @param Request $Request
      * @return JsonResponse
      */
-    public function create( Request $Request ) : JsonResponse
+    public function deposit( Request $Request) : JsonResponse
     {
         try
         {
@@ -38,18 +38,18 @@ class CustomerController
             ] , 400 );
         }
 
-        $Customer = new Customer();
 
-        return( $Customer->create( $RequestArray ) );
+        $Transaction = new Transaction( );
+
+        return $Transaction->deposit( $RequestArray );
     }
 
     /**
-     * @Route( "/Customer/Edit" )
-     *
+     * @Route( "/Transaction/Withdraw" )
      * @param Request $Request
      * @return JsonResponse
      */
-    public function edit( Request $Request )
+    public function withdraw( Request $Request) : JsonResponse
     {
         try
         {
@@ -63,10 +63,10 @@ class CustomerController
             ] , 400 );
         }
 
-        $Customer = new Customer();
 
-        return( $Customer->edit( $RequestArray ) );
+        $Transaction = new Transaction( );
 
+        return $Transaction->withdraw( $RequestArray );
     }
 
 }

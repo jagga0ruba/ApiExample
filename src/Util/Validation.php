@@ -137,6 +137,20 @@ class Validation
 
     }
 
+    public function getDateInStringFormatIfValidOrEmpty( string $DateToBeValidated ) : string
+    {
+
+        if ( preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$DateToBeValidated ) || $DateToBeValidated === '' )
+        {
+
+            return $DateToBeValidated;
+
+        }
+
+        throw new \Exception( $DateToBeValidated . 'is not correctly formatted, please provide it in the following format "yyyy-mm-dd"');
+
+    }
+
     public function checkForValidJsonRequest( Request $Request) : array
     {
         if( 0 === strpos( $Request->headers->get( 'Content-Type' ) , 'application/json' ) )

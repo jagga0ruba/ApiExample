@@ -10,7 +10,7 @@ namespace App\Util;
 use PDO;
 use Symfony\Component\Yaml\Yaml;
 
-class DatabaseConnection
+class Database
 {
 
     protected $PDO;
@@ -28,6 +28,9 @@ class DatabaseConnection
 
         $this->PDO = new PDO($Dsn, $DbYaml['username'], $DbYaml['password']);
 
+        $this->PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $this->PDO->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
 
     public function getConnection() : PDO

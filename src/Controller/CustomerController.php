@@ -8,6 +8,8 @@
 
 namespace App\Controller;
 
+use App\Model\Customer;
+use App\Util\Validation;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,11 +25,33 @@ class CustomerController
      */
     public function create( Request $Request )
     {
-        var_dump( $Request->headers->get( 'Content-Type' ) );
+        try
+        {
+            $RequestArray = $this->validateRequest( $Request );
+        }
+        catch( \Exception $Exception )
+        {
+            return new JsonResponse( [
+                'Success' => 'false',
+                'ErrorMessage' => $Exception->getMessage( )
+            ] , 400 );
+        }
 
-        var_dump( $Request->getContent() );
+        $Customer = new Customer();
 
-        return( new JsonResponse( ["sup" => "200"], 200 ) );
+        return( $Customer->create( $RequestArray ) );
+    }
+
+
+
+
+    protected function validateRequest( Request $Request ) : array
+    {
+        $Validation = new Validation();
+
+        $RequestArray = $Validation->checkForValidJsonRequest( $Request );
+
+        return $RequestArray;
     }
 
 }

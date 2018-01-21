@@ -2,7 +2,7 @@ By: João Fardilha
 Email: joao.d.fardilha@gmail.com
 Date 14/01/2018
 
-# Backend Example
+# Api Example
 
 ## Requirements: 
     

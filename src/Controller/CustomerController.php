@@ -23,7 +23,7 @@ class CustomerController
      * @param Request $Request
      * @return JsonResponse
      */
-    public function create( Request $Request )
+    public function create( Request $Request ) : JsonResponse
     {
         try
         {
@@ -42,7 +42,31 @@ class CustomerController
         return( $Customer->create( $RequestArray ) );
     }
 
+    /**
+     * @Route( "/Customer/Edit" )
+     *
+     * @param Request $Request
+     * @return JsonResponse
+     */
+    public function edit( Request $Request )
+    {
+        try
+        {
+            $RequestArray = $this->validateRequest( $Request );
+        }
+        catch( \Exception $Exception )
+        {
+            return new JsonResponse( [
+                'Success' => 'false',
+                'ErrorMessage' => $Exception->getMessage( )
+            ] , 400 );
+        }
 
+        $Customer = new Customer();
+
+        return( $Customer->edit( $RequestArray ) );
+
+    }
 
 
     protected function validateRequest( Request $Request ) : array

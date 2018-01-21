@@ -27,23 +27,30 @@ class Customer
 
     protected $Gender;
 
-    private $CustomerEntity;
-
     public function create( array $RequestArray ) : JsonResponse
     {
         try
         {
+
             $Validation = new Validation();
 
-            $FirstName = $Validation->filterString( $RequestArray['FirstName'] ? : '' );
+            $FirstName = $Validation->filterString( $RequestArray['FirstName'] ?: '' );
 
-            $LastName = $Validation->filterString( $RequestArray['LastName'] ? : '' );
+            $LastName = $Validation->filterString( $RequestArray['LastName'] ?: '' );
 
-            $EmailAddress = $Validation->filterEmail( $RequestArray['EmailAddress'] ? : '' );
+            $EmailAddress = $Validation->filterEmail( $RequestArray['EmailAddress'] ?: '' );
 
-            $Country = $Validation->getCountryIfValid( $RequestArray['Country'] ? : '' );
+            $Country = $Validation->getCountryIfValid(
+                $RequestArray['Country'] ?
+                    strtoupper($RequestArray['Country'] ) :
+                    ''
+            );
 
-            $Gender = $Validation->getGenderIfValid( $RequestArray['Gender'] ? : '' );
+            $Gender = $Validation->getGenderIfValid(
+                $RequestArray['Gender'] ?
+                    ucfirst( strtolower( $RequestArray['Gender'] ) ) :
+                    ''
+            );
 
             $this->EmailAddress = $EmailAddress;
 
@@ -54,22 +61,113 @@ class Customer
             $this->Country = $Country;
 
             $this->Gender = $Gender;
+
+        }
+        catch ( \Exception $Exception )
+        {
+
+            return new JsonResponse( [
+                'Success' => 'false',
+                'ErrorMessage' => $Exception->getMessage( )
+            ] , 422 );
+
+        }
+
+        try
+        {
+
+            $CustomerEntity = new CustomerDB();
+
+            $this->IdCustomer = $CustomerEntity->create( $this->getCreateParameters() );
+
+        }
+        catch ( \Exception $Exception )
+        {
+
+            return new JsonResponse( [
+                'Success' => 'false',
+                'ErrorMessage' => $Exception->getMessage( )
+            ] , 409 );
+
+        }
+
+        return new JsonResponse( [
+            'Success' => 'true',
+            'Contents' => [
+                'CustomerId' => $this->IdCustomer
+            ]
+        ] , 200 );
+
+    }
+
+    public function edit( array $RequestArray ) : JsonResponse
+    {
+        try
+        {
+
+            $Validation = new Validation();
+
+            $IdCustomer = $Validation->filterInt(
+                isset( $RequestArray['IdCustomer'] ) ?
+                    $RequestArray['IdCustomer']  :
+                    ''
+            );
+
+            $FirstName = $Validation->sanitizeString(
+                isset( $RequestArray['FirstName'] ) ?
+                    $RequestArray['FirstName'] :
+                    ''
+            );
+
+            $LastName = $Validation->sanitizeString(
+                isset( $RequestArray['LastName'] ) ?
+                    $RequestArray['LastName'] :
+                    ''
+            );
+
+            $EmailAddress = $RequestArray['EmailAddress'] ?: '';
+
+            if ($EmailAddress !== '') {
+                $EmailAddress = $Validation->filterEmail($EmailAddress);
+            }
+
+            $Country = $Validation->getCountryIfValidOrEmpty(
+                isset( $RequestArray['Country'] ) ?
+                    strtoupper( $RequestArray['Country'] ) :
+                    ''
+            );
+
+            $Gender = $Validation->getGenderIfValidOrEmpty(
+                isset( $RequestArray['Gender'] ) ?
+                    ucfirst( strtolower( $RequestArray['Gender'] ) ):
+                    ''
+            );
+
         }
         catch ( \Exception $Exception )
         {
             return new JsonResponse( [
                 'Success' => 'false',
-                'ErrorMessage' => $Exception->getMessage( )
+                'ErrorMessage' => $Exception->getMessage( ),
             ] , 422 );
         }
 
         try
         {
-            $this->CustomerEntity = new CustomerDB();
+            $CustomerEntity = new CustomerDB();
 
-            $this->IdCustomer = $this->CustomerEntity->create( $this->getCreateParameters() );
+            $ResultArray = $CustomerEntity->edit(
+                [
+                    'IdCustomer' => $IdCustomer,
+                    'FirstName' => $FirstName,
+                    'LastName' => $LastName,
+                    'EmailAddress' => $EmailAddress,
+                    'Country' => $Country,
+                    'Gender' => $Gender
+                ]
+            );
         }
-        catch ( \Exception $Exception )
+        catch( \Exception $Exception )
         {
             return new JsonResponse( [
                 'Success' => 'false',
@@ -79,12 +177,13 @@ class Customer
 
         return new JsonResponse( [
             'Success' => 'true',
-            'Content' => [
-                'CustomerId' => $this->IdCustomer
+            'Contents' => [
+                'CustomerId' => $ResultArray
             ]
         ] , 200 );
 
     }
+
 
     public function getCreateParameters( ) : array
     {
@@ -97,8 +196,4 @@ class Customer
         );
     }
 
-    public function getEditParameters( ) : array
-    {
-
-    }
 }

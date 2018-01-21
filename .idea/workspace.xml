@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="947dda3a-ff87-4675-8c6e-1231b6b8bde4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Controller/ReportController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Controller/TransactionsController.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Entity/ReportDB.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Entity/TransactionDB.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Model/Report.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Model/Transaction.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Util/ValidateContentTypeJson.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReadMe.md" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/databasemigration.sql" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ApiController.php" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CustomerController.php" afterPath="$PROJECT_DIR$/src/Controller/CustomerController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CustomerDB.php" afterPath="$PROJECT_DIR$/src/Entity/CustomerDB.php" />
-      <change beforePath="$PROJECT_DIR$/src/Util/Validation.php" afterPath="$PROJECT_DIR$/src/Util/Validation.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,28 +18,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CustomerController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/CustomerController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TransactionsController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/TransactionsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="43" selection-end-column="54" />
-              <folding>
-                <element signature="e#117#154#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Transaction.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Transaction.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,14 +62,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Report.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Report.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Model/Report.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="24" column="69" lean-forward="false" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
+            <state relative-caret-position="252">
+              <caret line="26" column="25" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
               <folding>
                 <element signature="e#112#136#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReadMe.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ReadMe.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="377">
+                <caret line="227" column="25" lean-forward="false" selection-start-line="227" selection-start-column="25" selection-end-line="227" selection-end-column="25" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="databasemigration.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/databasemigration.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="212" column="14" lean-forward="true" selection-start-line="212" selection-start-column="14" selection-end-line="212" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -170,6 +162,8 @@
         <option value="$PROJECT_DIR$/src/Entity/ReportDB.php" />
         <option value="$PROJECT_DIR$/src/Controller/ReportController.php" />
         <option value="$PROJECT_DIR$/src/Model/Report.php" />
+        <option value="$PROJECT_DIR$/databasemigration.sql" />
+        <option value="$PROJECT_DIR$/ReadMe.md" />
       </list>
     </option>
   </component>
@@ -257,40 +251,6 @@
               <item name="Api" type="b2602c69:ProjectViewProjectNode" />
               <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="Api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Model" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="Api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Api" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Util" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -334,12 +294,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1516530535614</updated>
-      <workItem from="1516530540328" duration="17508000" />
+      <workItem from="1516530540328" duration="18650000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17508000" />
+    <option name="totallyTimeSpent" value="18650000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-55" width="1296" height="1000" extended-state="6" />
@@ -439,7 +399,7 @@
         <state relative-caret-position="90">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="43" selection-end-column="54" />
           <folding>
-            <element signature="e#117#154#0#PHP" expanded="true" />
+            <element signature="e#117#154#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -448,14 +408,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="149" column="137" lean-forward="false" selection-start-line="149" selection-start-column="137" selection-end-line="149" selection-end-column="137" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/CustomerDB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -506,11 +458,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Report.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="24" column="69" lean-forward="false" selection-start-line="24" selection-start-column="69" selection-end-line="24" selection-end-column="69" />
+        <state relative-caret-position="252">
+          <caret line="26" column="25" lean-forward="false" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
           <folding>
             <element signature="e#112#136#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databasemigration.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="212" column="14" lean-forward="true" selection-start-line="212" selection-start-column="14" selection-end-line="212" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/CustomerDB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReadMe.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="377">
+            <caret line="227" column="25" lean-forward="false" selection-start-line="227" selection-start-column="25" selection-end-line="227" selection-end-column="25" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

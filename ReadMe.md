@@ -1,5 +1,7 @@
-By: João Fardilha
+By: João David Simões de Sá Fardilha
+
 Email: joao.d.fardilha@gmail.com
+
 Date 21/01/2018
 
 # Api Example

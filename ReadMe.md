@@ -56,11 +56,11 @@ http://localhost:8000/Customer/Create
 A successfull call will return a json string in the following format:
 ```
 {
-    "Success":"true",
-    "Contents":
+    "Success" : "true",
+    "Contents" :
     {
-        "CustomerId":CUSTOMERID,
-        "EmailAddress":EMAILADDRESS
+        "CustomerId" : CUSTOMERID,
+        "EmailAddress" : EMAILADDRESS
     }
 }
 ```
@@ -103,15 +103,15 @@ localhost:8000/Customer/Edit
 A successful call will return a json string in the following format:
 ```
 {
-    "Success":"true",
-    "Contents":
+    "Success" : "true",
+    "Contents" :
     {
-        "IdCustomer":IDCUSTOMER,
-        "FirstName":FIRSTNAME,
-        "LastName":LASTNAME,
-        "EmailAddress":EMAILADDRESS,
-        "Country":COUNTRY,
-        "Gender":GENDER
+        "IdCustomer" : IDCUSTOMER,
+        "FirstName" : FIRSTNAME,
+        "LastName" : LASTNAME,
+        "EmailAddress" : EMAILADDRESS,
+        "Country" : COUNTRY,
+        "Gender" : GENDER
     }
 }
 ```
@@ -138,12 +138,12 @@ localhost:8000/Transaction/Deposit
 A successful call will return a json string in the following format:
 ```
 {
-    "Success":"true",
-    "Contents":
+    "Success" : "true",
+    "Contents" :
     {
-        "IdCustomer":IDCOSTUMER,
-        "TotalBalance":TOTALBALANCE,
-        "BonusBalance":BONUSBALANCE
+        "IdCustomer" : IDCOSTUMER,
+        "TotalBalance" : TOTALBALANCE,
+        "BonusBalance" : BONUSBALANCE
     }
 }
 ```
@@ -169,12 +169,12 @@ localhost:8000/Transaction/Withdraw
 A successful call will return a json string in the following format:
 ```
 {
-    "Success":"true",
-    "Contents":
+    "Success" : "true",
+    "Contents" :
     {
-        "IdCustomer":IDCOSTUMER,
-        "TotalBalance":TOTALBALANCE,
-        "BonusBalance":BONUSBALANCE
+        "IdCustomer" : IDCOSTUMER,
+        "TotalBalance" : TOTALBALANCE,
+        "BonusBalance" : BONUSBALANCE
     }
 }
 ```
@@ -201,26 +201,26 @@ localhost:8000/DepositsAndWithdrawalsByCountrySinceDate
  
  ```
  {
-    "Success":"true",
+    "Success" : "true",
     "Contents":
         [
             {
                 "Since" : DATE
-                "Country":COUNTRY,
-                "NumberOfCostumers":NUMBEROFCOSTUMER,
-                "NumberOfDeposits":NUMBEROFDEPOSITS,
-                "TotalDepositAmount":DEPOSITSTOTAL,
-                "NumberOfWithdrawals":NUMBEROFWITHDRAWALS,
-                "TotalWithdrawalAmount": WITHDRAWALTOTAL
+                "Country" : COUNTRY,
+                "NumberOfCostumers" : NUMBEROFCOSTUMER,
+                "NumberOfDeposits" : NUMBEROFDEPOSITS,
+                "TotalDepositAmount" : DEPOSITSTOTAL,
+                "NumberOfWithdrawals" : NUMBEROFWITHDRAWALS,
+                "TotalWithdrawalAmount" : WITHDRAWALTOTAL
             },
             {
-		"Since" : DATE
-                "Country":COUNTRY2,
-                "NumberOfCostumers":NUMBEROFCOSTUMER2,
-                "NumberOfDeposits":NUMBEROFDEPOSITS2,
-                "TotalDepositAmount":DEPOSITSTOTAL2,
-                "NumberOfWithdrawals":NUMBEROFWITHDRAWALS2,
-                "TotalWithdrawalAmount": WITHDRAWALTOTAL2
+                "Since" : DATE
+                "Country" : COUNTRY2,
+                "NumberOfCostumers" : NUMBEROFCOSTUMER2,
+                "NumberOfDeposits" : NUMBEROFDEPOSITS2,
+                "TotalDepositAmount" : DEPOSITSTOTAL2,
+                "NumberOfWithdrawals" : NUMBEROFWITHDRAWALS2,
+                "TotalWithdrawalAmount" : WITHDRAWALTOTAL2
             }
         ]
 }

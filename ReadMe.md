@@ -207,19 +207,19 @@ localhost:8000/DepositsAndWithdrawalsByCountrySinceDate
             {
                 "Since" : DATE
                 "Country":COUNTRY,
-                "No Of Costumers":NUMBEROFCOSTUMER,
-                "No Of Deposits":NUMBEROFDEPOSITS,
-                "Total Deposit Amount":DEPOSITSTOTAL,
-                "No Of Withdrawals":NUMBEROFWITHDRAWALS,
-                "Total Withdrawal Amount": WITHDRAWALTOTAL
+                "NumberOfCostumers":NUMBEROFCOSTUMER,
+                "NumberOfDeposits":NUMBEROFDEPOSITS,
+                "TotalDepositAmount":DEPOSITSTOTAL,
+                "NumberOfWithdrawals":NUMBEROFWITHDRAWALS,
+                "TotalWithdrawalAmount": WITHDRAWALTOTAL
             },
             {
                 "Country":COUNTRY2,
-                "No Of Costumers":NUMBEROFCOSTUMER2,
-                "No Of Deposits":NUMBEROFDEPOSITS2,
-                "Total Deposit Amount":DEPOSITSTOTAL2,
-                "No Of Withdrawals":NUMBEROFWITHDRAWALS2,
-                "Total Withdrawal Amount": WITHDRAWALTOTAL2
+                "NumberOfCostumers":NUMBEROFCOSTUMER2,
+                "NumberOfDeposits":NUMBEROFDEPOSITS2,
+                "TotalDepositAmount":DEPOSITSTOTAL2,
+                "NumberOfWithdrawals":NUMBEROFWITHDRAWALS2,
+                "TotalWithdrawalAmount": WITHDRAWALTOTAL2
             }
         ]
 }

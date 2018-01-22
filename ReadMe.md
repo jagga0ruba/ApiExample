@@ -89,7 +89,7 @@ localhost:8000/Customer/Edit
 * You can also have them empty (this will also not change their value in the db)
    for example:
    ```
-   	{
+    {
         "IdCustomer" : IDCOSTUMER,
         "FirstName" : FIRSTNAME,
     }

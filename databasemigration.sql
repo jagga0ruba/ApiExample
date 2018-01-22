@@ -195,14 +195,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_GetTotalDepositAndWithdrawalsByG
 	IN `p_GivenDate` VARCHAR(50)
 )
 BEGIN
+
 	IF( p_GivenDate='' )
-	THEN
+	THEN 
 		SELECT DATE_SUB( NOW() , INTERVAL 7 DAY ) INTO @GivenDate;
 	ELSE
 		SELECT p_GivenDate INTO @GivenDate;
 	END IF;
 
-	SELECT @GivenDate as Since,t1.Country,t1.`No Of Costumers`,t1.`No Of Deposits`,t1.`Total Deposit Amount`,t2.`No Of Withdrawals`,t2.`Total Withdrawal Amount`
+	SELECT @GivenDate as 'GivenDate',t1.Country,t1.`No Of Costumers` as 'NumberOfCostumers',t1.`No Of Deposits` as 'NumberOfDeposits',t1.`Total Deposit Amount` as 'TotalDepositAmount',t2.`No Of Withdrawals` as 'NumberOfWithdrawals',t2.`Total Withdrawal Amount` as 'TotalWithdrawalAmount'
 	FROM (
 	SELECT customer.Country,COUNT( DISTINCT(customer.IdCustomer)) as 'No Of Costumers',COUNT( deposits.idAccount) as 'No Of Deposits', SUM( deposits.Value ) as 'Total Deposit Amount'
 	FROM customer
@@ -217,6 +218,7 @@ BEGIN
 	LEFT JOIN transactions as withdrawals ON withdrawals.`Type`='Withdrawal' AND account.idAccount=withdrawals.idAccount AND DATE( withdrawals.DateTimeAdded )>@GivenDate
 	GROUP BY customer.Country
 	) as t2 ON t1.Country=t2.Country;
+	
 END//
 DELIMITER ;
 

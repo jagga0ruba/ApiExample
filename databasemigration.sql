@@ -203,7 +203,7 @@ BEGIN
 		SELECT p_GivenDate INTO @GivenDate;
 	END IF;
 
-	SELECT @GivenDate as 'GivenDate',t1.Country,t1.`No Of Costumers` as 'NumberOfCostumers',t1.`No Of Deposits` as 'NumberOfDeposits',t1.`Total Deposit Amount` as 'TotalDepositAmount',t2.`No Of Withdrawals` as 'NumberOfWithdrawals',t2.`Total Withdrawal Amount` as 'TotalWithdrawalAmount'
+	SELECT @GivenDate as 'Since',t1.Country,t1.`No Of Costumers` as 'NumberOfCostumers',t1.`No Of Deposits` as 'NumberOfDeposits',t1.`Total Deposit Amount` as 'TotalDepositAmount',t2.`No Of Withdrawals` as 'NumberOfWithdrawals',t2.`Total Withdrawal Amount` as 'TotalWithdrawalAmount'
 	FROM (
 	SELECT customer.Country,COUNT( DISTINCT(customer.IdCustomer)) as 'No Of Costumers',COUNT( deposits.idAccount) as 'No Of Deposits', SUM( deposits.Value ) as 'Total Deposit Amount'
 	FROM customer

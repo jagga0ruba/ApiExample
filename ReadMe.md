@@ -1,6 +1,6 @@
 By: João Fardilha
 Email: joao.d.fardilha@gmail.com
-Date 14/01/2018
+Date 21/01/2018
 
 # Api Example
 

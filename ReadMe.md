@@ -214,6 +214,7 @@ localhost:8000/DepositsAndWithdrawalsByCountrySinceDate
                 "TotalWithdrawalAmount": WITHDRAWALTOTAL
             },
             {
+		"Since" : DATE
                 "Country":COUNTRY2,
                 "NumberOfCostumers":NUMBEROFCOSTUMER2,
                 "NumberOfDeposits":NUMBEROFDEPOSITS2,

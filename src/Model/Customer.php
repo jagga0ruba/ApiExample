@@ -108,21 +108,21 @@ class Customer
             $Validation = new Validation();
 
             $IdCustomer = $Validation->filterInt(
-                isset( $RequestArray['IdCustomer'] ) ?
-                    $RequestArray['IdCustomer']  :
-                    ''
+                isset( $RequestArray['IdCustomer'] )
+                    ? $RequestArray['IdCustomer']
+                    : ''
             );
 
             $FirstName = $Validation->sanitizeString(
-                isset( $RequestArray['FirstName'] ) ?
-                    $RequestArray['FirstName'] :
-                    ''
+                isset( $RequestArray['FirstName'] )
+                    ? $RequestArray['FirstName']
+                    : ''
             );
 
             $LastName = $Validation->sanitizeString(
-                isset( $RequestArray['LastName'] ) ?
-                    $RequestArray['LastName'] :
-                    ''
+                isset( $RequestArray['LastName'] )
+                    ? $RequestArray['LastName']
+                    : ''
             );
 
             $EmailAddress = $RequestArray['EmailAddress'] ?: '';
@@ -132,15 +132,15 @@ class Customer
             }
 
             $Country = $Validation->getCountryIfValidOrEmpty(
-                isset( $RequestArray['Country'] ) ?
-                    strtoupper( $RequestArray['Country'] ) :
-                    ''
+                isset( $RequestArray['Country'] )
+                    ? strtoupper( $RequestArray['Country'] )
+                    : ''
             );
 
             $Gender = $Validation->getGenderIfValidOrEmpty(
-                isset( $RequestArray['Gender'] ) ?
-                    ucfirst( strtolower( $RequestArray['Gender'] ) ):
-                    ''
+                isset( $RequestArray['Gender'] )
+                    ? ucfirst( strtolower( $RequestArray['Gender'] ) )
+                    : ''
             );
 
         }

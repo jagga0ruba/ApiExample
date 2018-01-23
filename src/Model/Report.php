@@ -23,9 +23,9 @@ class Report
             $Validation = new Validation();
 
             $Date = $Validation->getDateInStringFormatIfValidOrEmpty(
-                isset( $RequestArray[ 'Date' ] ) ?
-                    $RequestArray[ 'Date' ] :
-                    ''
+                isset( $RequestArray[ 'Date' ] )
+                    ? $RequestArray[ 'Date' ]
+                    : ''
             );
 
         }

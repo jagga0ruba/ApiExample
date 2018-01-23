@@ -49,7 +49,7 @@ class CustomerController
      * @param Request $Request
      * @return JsonResponse
      */
-    public function edit( Request $Request )
+    public function edit( Request $Request ) : JsonResponse
     {
         try
         {

@@ -229,3 +229,4 @@ localhost:8000/DepositsAndWithdrawalsByCountrySinceDate
 
 ## Eventual TODO's:
 * Implementing unit tests
+* Validations should work by reference instead of returning values, that would make the code cleaner and easier to read.
